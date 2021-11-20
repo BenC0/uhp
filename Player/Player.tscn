@@ -50,7 +50,10 @@ speed = 150
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -57, -192, -1, -185, 79, -140, 114, -66, 94, 35, 43, 117, -86, 124, -116, 19, -127, -44, -112, -116 )
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
