@@ -1,14 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Wall/Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main/Main.gd" type="Script" id=3]
+[ext_resource path="res://Floor/Floor.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 481, 325 )
+position = Vector2( 141, 530 )
+z_index = 1
 
-[node name="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 803, 292 )
+[node name="Floor" parent="." instance=ExtResource( 4 )]
+z_index = 1
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 625 )
+z_index = 1
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 572, 625 )
+z_index = 1
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 572, 561 )
+z_index = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1298.0
+margin_bottom = 744.0
+color = Color( 0.101961, 0.101961, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

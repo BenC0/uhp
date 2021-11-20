@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const GRAVITY = 0
-export var WALK_SPEED = 200
+const GRAVITY = 2000
+const WALK_SPEED = 200
 
 var velocity = Vector2()
 
