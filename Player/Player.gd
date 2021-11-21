@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-const GRAVITY = 2000
+const GRAVITY = 200.0
 const WALK_SPEED = 200
+const JUMP_FORCE = 200
 
 var velocity = Vector2()
 
@@ -13,15 +14,13 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x =  WALK_SPEED
 	else:
-		velocity.x = 0
+		velocity.x = lerp(velocity.x, 0, 0.1)
 
-	if Input.is_action_pressed("ui_up"):
-		velocity.y = -WALK_SPEED
-	elif Input.is_action_pressed("ui_down"):
-		velocity.y =  WALK_SPEED
-	else:
-		velocity.y = 0
-
+	if Input.is_action_pressed("ui_up") and is_on_floor():
+		velocity.y = -JUMP_FORCE
+	
+	if velocity.x != 0:
+		$AnimatedSprite.flip_h = velocity.x < 0
 	# We don't need to multiply velocity by delta because "move_and_slide" already takes delta time into account.
 
 	# The second parameter of "move_and_slide" is the normal pointing up.

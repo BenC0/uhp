@@ -12,48 +12,41 @@ func addWallPiece(x, y):
 	add_child(WallBlock)
 
 func generate2dMap(width, height):
-	var max_x_blocks = (width / wall_dim_x) + 1
-	var max_y_blocks = (height / wall_dim_y) + 1
+	var max_x_blocks = ceil(width / wall_dim_x)
+	var max_y_blocks = ceil(height / wall_dim_y)
 	var map = []
-	# 2 rows at a time
-	for y in range(max_y_blocks / 2):
+	for y in range(max_y_blocks):
 		# first column is always a block
-		var level1 = [1]
-		var level2 = [1]
-		for x in range(max_x_blocks - 2):
+		var level = [1]
+		for x in range(max_x_blocks):
 			var block 
-			# if first or last row, set to block
-			if y == 0 or y == max_y_blocks - 1 or y == max_y_blocks:
+			# if first or last row, or first column, set to block
+			if y == 0 or y >= max_y_blocks - 1 or x == 0:
 				block = 1
-			# if first 2 x 2 (offset by 1x1), set to air
-			elif (y == 1 or y == 2) and (x == 1 or x == 2):
-				block = 0
 			else:
-				block = rng.randi_range (0,1)
-			level1.append(block)
-			level2.append(block)
-		# last column is always a block
-		level1.append(1)
-		level2.append(1)
-		map.append(level1)
-		map.append(level2)
+				block = 0
+			level.append(block)
+			print(str(x) + ", " + str(y) + ", " + str(max_y_blocks))
+		map.append(level)
 	return map
+
+func generate_level(map):
+	var x_coord = 0
+	var y_coord = 0
+	for y in map:
+		for x in y:
+			if x == 1:
+				addWallPiece(x_coord, y_coord)
+			x_coord += wall_dim_x
+		x_coord = 0
+		y_coord += wall_dim_y
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
 	screen_size = get_viewport().size
 	var map = generate2dMap(screen_size[0], screen_size[1])
-	var x_coord = 0
-	var y_coord = 0
-	for y in map:
-		for x in y:
-			if x == 1:
-				print(str(x_coord) + ", " + str(y_coord))
-				addWallPiece(x_coord, y_coord)
-			x_coord += wall_dim_x
-		x_coord = 0
-		y_coord += wall_dim_y
+	generate_level(map)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
