@@ -15,17 +15,28 @@ func generate2dMap(width, height):
 	var max_x_blocks = (width / wall_dim_x) + 1
 	var max_y_blocks = (height / wall_dim_y) + 1
 	var map = []
-	for y in range(max_y_blocks):
-		var level = [1]
+	# 2 rows at a time
+	for y in range(max_y_blocks / 2):
+		# first column is always a block
+		var level1 = [1]
+		var level2 = [1]
 		for x in range(max_x_blocks - 2):
+			var block 
+			# if first or last row, set to block
 			if y == 0 or y == max_y_blocks - 1 or y == max_y_blocks:
-				level.append(1)
+				block = 1
+			# if first 2 x 2 (offset by 1x1), set to air
 			elif (y == 1 or y == 2) and (x == 1 or x == 2):
-				level.append(0)
+				block = 0
 			else:
-				level.append(rng.randi_range (0,1))
-		level.append(1)
-		map.append(level)
+				block = rng.randi_range (0,1)
+			level1.append(block)
+			level2.append(block)
+		# last column is always a block
+		level1.append(1)
+		level2.append(1)
+		map.append(level1)
+		map.append(level2)
 	return map
 
 # Called when the node enters the scene tree for the first time.
