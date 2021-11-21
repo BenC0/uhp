@@ -40,7 +40,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 25 )
 __meta__ = {
 "_edit_group_": true
@@ -49,7 +49,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 8
+frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
