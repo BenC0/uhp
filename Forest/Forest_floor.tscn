@@ -4,7 +4,7 @@
 [ext_resource path="res://Forest/assets/Layer_0001_8.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 464, 29 )
+extents = Vector2( 464, 24.5 )
 
 [node name="Forest_floor" type="Node2D"]
 
@@ -14,13 +14,15 @@ mass = 0.00102041
 gravity_scale = 0.0
 
 [node name="Layer00018" type="Sprite" parent="Ground"]
+z_index = -1
 texture = ExtResource( 11 )
 
 [node name="Layer00009" type="Sprite" parent="Ground"]
+light_mask = 0
 z_index = 1
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2( 0, 368 )
+position = Vector2( 0, 372.5 )
 z_index = 2
 shape = SubResource( 1 )

@@ -1,7 +1,7 @@
 # Untitled Horror Project
 
 ## Overview
-Aim is to go through the mansion and release/trap the ghosts & monsters.
+Aim is to go through the mansion and release/trap the ghosts & monsters until you're able to free/secure the entire mansion.
 Storyline - The player doesn't have a specific story (stumbles into mansion with amnesia) but each of the ghost/monsters do
 
 ## Mechanics
@@ -12,7 +12,7 @@ Storyline - The player doesn't have a specific story (stumbles into mansion with
    1. If heart rate goes too high adrenaline kicks in
    2. if heart rate is too high for too long, player passes out
 3. Lights
-   1. amnesia style tinderboxes, candles and lantern
+   1. amnesia style tinderboxes, only source of lighting are candles and lantern
 4. Adaptive map & scenery
    1. Hallways extend when player is scared
    2. Rooms change and become scarier
@@ -25,6 +25,10 @@ Storyline - The player doesn't have a specific story (stumbles into mansion with
    3. High morality
       1. Ghosts are less likely to be hostile
       2. Insanity raises slower
+6. Ghosts & Monsters
+   1. Releasing is difficult, quest based
+   2. Trapping is easier, puzzle based
+
 
 ## Characters
 # Player
