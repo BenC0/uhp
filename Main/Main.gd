@@ -45,8 +45,8 @@ func generate_level(map):
 func _ready():
 	rng.randomize()
 	screen_size = get_viewport().size
-	var map = generate2dMap(screen_size[0], screen_size[1])
-	generate_level(map)
+	#var map = generate2dMap(screen_size[0], screen_size[1])
+	#generate_level(map)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

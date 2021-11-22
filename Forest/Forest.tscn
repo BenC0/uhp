@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Forest/assets/Layer_0007_Lights.png" type="Texture" id=2]
+[ext_resource path="res://Forest/assets/Layer_0011_0.png" type="Texture" id=3]
+[ext_resource path="res://Forest/assets/Layer_0006_4.png" type="Texture" id=4]
+[ext_resource path="res://Forest/assets/Layer_0010_1.png" type="Texture" id=5]
+[ext_resource path="res://Forest/assets/Layer_0009_2.png" type="Texture" id=6]
+[ext_resource path="res://Forest/assets/Layer_0008_3.png" type="Texture" id=7]
+[ext_resource path="res://Forest/assets/Layer_0005_5.png" type="Texture" id=8]
+[ext_resource path="res://Forest/assets/Layer_0004_Lights.png" type="Texture" id=9]
+[ext_resource path="res://Forest/assets/Layer_0002_7.png" type="Texture" id=10]
+
+[node name="Forest" type="Node2D"]
+
+[node name="Layer00110" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Layer00101" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="Layer00092" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+
+[node name="Layer00083" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="Layer0007Lights" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Layer00064" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="Layer00055" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+
+[node name="Layer0004Lights" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+
+[node name="Layer0004Lights2" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+
+[node name="Layer00027" type="Sprite" parent="."]
+texture = ExtResource( 10 )
